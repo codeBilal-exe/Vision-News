@@ -8,7 +8,7 @@
         content="Vision News Products — Choose a subscription plan that works for you. Free, Pro, and Premium tiers available.">
     <title>Vision News — Products</title>
     <link rel="icon" href="../Resources/images/WebICON.png" type="image/png">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Webstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -23,16 +23,21 @@
                 <p>Your Daily Fact Partner</p>
             </div>
         </a>
+
         <form class="search-form" role="search" onsubmit="return false;">
-            <input type="search" placeholder="Search stories, topics..." aria-label="Search">
+            <input type="search" id="site-search" placeholder="Search stories, topics..." aria-label="Search">
             <button type="submit" aria-label="Submit search"><i class="fa fa-search"></i></button>
         </form>
-        <div class="lang-selector">
-            <span class="active">EN</span><span>FR</span><span>DE</span><span>CN</span>
+
+        <div class="lang-selector" role="navigation" aria-label="Language selector">
+            <span class="active" tabindex="0">EN</span>
+            <span tabindex="0">FR</span>
+            <span tabindex="0">DE</span>
+            <span tabindex="0">CN</span>
         </div>
     </header>
 
-    <!-- Nav -->
+    <!-- Sticky Navigation -->
     <nav class="site-nav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
             <div class="nav-links">
@@ -230,12 +235,17 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <h3>Vision News</h3>
-                <p>Your trusted source for accurate, in-depth reporting from around the world.</p>
+                <p>Your trusted source for accurate, in-depth reporting. We bring you fact-checked stories from around
+                    the world.</p>
                 <div class="social-links" style="margin-top:20px;">
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://x.com/visionnews" target="_blank" rel="noopener" aria-label="Twitter/X"><i
+                            class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/visionnews" target="_blank" rel="noopener"
+                        aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/visionnews" target="_blank" rel="noopener"
+                        aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@visionnews" target="_blank" rel="noopener" aria-label="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -275,6 +285,30 @@
         </div>
     </footer>
 
+
+    <script>
+        // ── Scroll-reveal (IntersectionObserver) ──────────────
+        const revealEls = document.querySelectorAll(
+            '.card, .sidebar-widget, .pricing-card, .download-card, .team-card, .timeline-box, .faq-item, .contact-form, .stat-item'
+        );
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealEls.forEach(el => observer.observe(el));
+
+        // ── Language selector active state ────────────────────
+        document.querySelectorAll('.lang-selector span').forEach(span => {
+            span.addEventListener('click', () => {
+                document.querySelectorAll('.lang-selector span').forEach(s => s.classList.remove('active'));
+                span.classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Vision News — Your daily fact partner. Breaking news, top stories, analysis, and more.">
+    <title>Vision News — Home</title>
+    <link rel="icon" href="Resources/images/WebICON.png" type="image/png">
+    <link rel="stylesheet" href="css/Webstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="Home.html" class="logo">
+            <img src="Resources/images/Weblogo.png" alt="Vision News Logo">
+            <div class="logo-text">
+                <h1>Vision</h1>
+                <p>Your Daily Fact Partner</p>
+            </div>
+        </a>
+
+        <form class="search-form" role="search" onsubmit="return false;">
+            <input type="search" id="site-search" placeholder="Search stories, topics..." aria-label="Search">
+            <button type="submit" aria-label="Submit search"><i class="fa fa-search"></i></button>
+        </form>
+
+        <div class="lang-selector" role="navigation" aria-label="Language selector">
+            <span class="active" tabindex="0">EN</span>
+            <span tabindex="0">FR</span>
+            <span tabindex="0">DE</span>
+            <span tabindex="0">CN</span>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="Home.html" class="active">Home</a>
+                <a href="pages/Products.html">Products</a>
+                <a href="pages/Download.html">Download</a>
+                <a href="pages/BuyNow.html">Buy Now</a>
+                <a href="pages/Support.html">Support</a>
+                <a href="pages/About.html">About</a>
+            </div>
+            <span class="nav-date">Tuesday, March 10, 2026</span>
+        </div>
+    </nav>
+
+    <!-- Breaking News Ticker -->
+    <div class="ticker-bar" aria-label="Breaking news ticker">
+        <span class="ticker-label">Breaking</span>
+        <div class="ticker-content">
+            <div class="ticker-track">
+                <span>Scientists discover new treatment for rare genetic disease</span>
+                <span>Global climate summit reaches landmark agreement on carbon emissions</span>
+                <span>Tech giant unveils next-generation AI model with record capabilities</span>
+                <span>Stock markets surge following positive economic data release</span>
+                <span>Space agency confirms successful launch of new orbital telescope</span>
+                <!-- duplicate for seamless loop -->
+                <span>Scientists discover new treatment for rare genetic disease</span>
+                <span>Global climate summit reaches landmark agreement on carbon emissions</span>
+                <span>Tech giant unveils next-generation AI model with record capabilities</span>
+                <span>Stock markets surge following positive economic data release</span>
+                <span>Space agency confirms successful launch of new orbital telescope</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <img src="Resources/images/Webbanner.jpg" alt="Today's top story banner">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <span class="tag">Top Story</span>
+                    <h2>The Story Behind the Iconic Apple Logo</h2>
+                    <p>Originally featuring Sir Isaac Newton sitting beneath a tree, Apple's 1976 logo carried a quote
+                        that read — "A mind forever voyaging…"</p>
+                    <a href="#featured" class="btn btn-primary">Read More <i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="container">
+            <div class="section content-with-sidebar">
+
+                <!-- Articles Area -->
+                <div>
+                    <h2 class="section-title">Featured Stories</h2>
+                    <div class="article-grid" id="featured">
+
+                        <!-- Featured Card -->
+                        <article class="card featured" id="apple-story">
+                            <img src="Resources/images/AppleLogo.webp" alt="Original Apple Logo from 1976"
+                                class="card-img" style="height:300px;object-fit:cover;">
+                            <div class="card-body">
+                                <span class="card-category">Technology</span>
+                                <h3 class="card-title"><a href="#">The Origins of Apple's Iconic Logo</a></h3>
+                                <div class="card-meta">
+                                    <span><i class="fa fa-calendar"></i> March 10, 2026</span>
+                                    <span><i class="fa fa-user"></i> Editorial Team</span>
+                                </div>
+                                <p class="card-excerpt">Originally, it featured Sir Isaac Newton sitting beneath a tree,
+                                    with an apple about to fall on his head. Designed in 1976, it included the phrase —
+                                    <em>"Newton…A mind forever voyaging through strange seas of thought…alone."</em>
+                                </p>
+                                <a href="#" class="btn btn-outline" style="margin-top:16px;">Full Story <i
+                                        class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="card">
+                            <img src="Resources/images/redPanda.png" alt="Red Panda in the wild" class="card-img">
+                            <div class="card-body">
+                                <span class="card-category">Wildlife</span>
+                                <h3 class="card-title"><a href="#">Red Pandas: The Hidden Giants of the Himalayas</a>
+                                </h3>
+                                <div class="card-meta">
+                                    <span><i class="fa fa-calendar"></i> March 9, 2026</span>
+                                </div>
+                                <p class="card-excerpt">Scientists have discovered new habitats for the endangered red
+                                    panda, offering hope for conservation efforts across Nepal and China.</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 3 -->
+                        <article class="card">
+                            <div class="card-body" style="padding:28px;">
+                                <span class="card-category">Science</span>
+                                <h3 class="card-title"><a href="#">Webb Telescope Captures Earliest Known Galaxy</a>
+                                </h3>
+                                <div class="card-meta">
+                                    <span><i class="fa fa-calendar"></i> March 8, 2026</span>
+                                </div>
+                                <p class="card-excerpt">NASA's James Webb Space Telescope has imaged what may be the
+                                    oldest galaxy ever observed, dating back just 280 million years after the Big Bang.
+                                </p>
+                                <a href="#" class="btn btn-sm btn-outline" style="margin-top:16px;">Read</a>
+                            </div>
+                        </article>
+
+                        <!-- Card 4 -->
+                        <article class="card">
+                            <div class="card-body" style="padding:28px;">
+                                <span class="card-category">Business</span>
+                                <h3 class="card-title"><a href="#">Global EV Sales Surpass 20 Million Mark in 2025</a>
+                                </h3>
+                                <div class="card-meta">
+                                    <span><i class="fa fa-calendar"></i> March 7, 2026</span>
+                                </div>
+                                <p class="card-excerpt">Electric vehicle sales broke records worldwide last year, with
+                                    China and Europe leading adoption as battery costs continue to drop.</p>
+                                <a href="#" class="btn btn-sm btn-outline" style="margin-top:16px;">Read</a>
+                            </div>
+                        </article>
+
+                        <!-- Card 5 -->
+                        <article class="card">
+                            <div class="card-body" style="padding:28px;">
+                                <span class="card-category">Health</span>
+                                <h3 class="card-title"><a href="#">New Study Reveals Benefits of 7-Minute Daily
+                                        Meditation</a></h3>
+                                <div class="card-meta">
+                                    <span><i class="fa fa-calendar"></i> March 6, 2026</span>
+                                </div>
+                                <p class="card-excerpt">Researchers at Oxford found that just seven minutes of
+                                    mindfulness per day can significantly reduce stress biomarkers in adults under 40.
+                                </p>
+                                <a href="#" class="btn btn-sm btn-outline" style="margin-top:16px;">Read</a>
+                            </div>
+                        </article>
+
+                    </div><!-- /article-grid -->
+                </div>
+
+                <!-- Sidebar -->
+                <aside>
+                    <!-- Trending -->
+                    <div class="sidebar-widget">
+                        <h4>Trending Now</h4>
+                        <ol class="trending-list">
+                            <li><span class="trending-num">1</span><span>Apple's 1976 logo and the Newton story</span>
+                            </li>
+                            <li><span class="trending-num">2</span><span>Red Panda conservation success in Nepal</span>
+                            </li>
+                            <li><span class="trending-num">3</span><span>James Webb reveals oldest galaxy yet</span>
+                            </li>
+                            <li><span class="trending-num">4</span><span>EV sales smash record in 2025</span></li>
+                            <li><span class="trending-num">5</span><span>Daily meditation study shocks
+                                    researchers</span></li>
+                        </ol>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-widget">
+                        <h4>Daily Newsletter</h4>
+                        <p style="font-size:.875rem;color:var(--gray-2);margin-bottom:16px;">Get the top 5 stories
+                            delivered to your inbox every morning.</p>
+                        <form class="newsletter-form" onsubmit="return false;">
+                            <input type="email" placeholder="Your email address" id="newsletter-email"
+                                aria-label="Email for newsletter">
+                            <button class="btn btn-primary" type="submit">Subscribe <i
+                                    class="fa fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+
+                    <!-- Quick links -->
+                    <div class="sidebar-widget">
+                        <h4>Quick Links</h4>
+                        <ul style="display:flex;flex-direction:column;gap:8px;">
+                            <li><a href="pages/Products.html"
+                                    style="font-size:.875rem;color:var(--primary);display:flex;align-items:center;gap:8px;"><i
+                                        class="fa fa-newspaper"></i> Subscribe to Vision Pro</a></li>
+                            <li><a href="pages/Download.html"
+                                    style="font-size:.875rem;color:var(--primary);display:flex;align-items:center;gap:8px;"><i
+                                        class="fa fa-download"></i> Download Our App</a></li>
+                            <li><a href="pages/About.html"
+                                    style="font-size:.875rem;color:var(--primary);display:flex;align-items:center;gap:8px;"><i
+                                        class="fa fa-info-circle"></i> About Vision News</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+            </div><!-- /content-with-sidebar -->
+        </div><!-- /container -->
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2.4M+</div>
+                    <div class="stat-label">Monthly Readers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">180+</div>
+                    <div class="stat-label">Countries Reached</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Articles Published</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Vision News</h3>
+                <p>Your trusted source for accurate, in-depth reporting. We bring you fact-checked stories from around
+                    the world.</p>
+                <div class="social-links" style="margin-top:20px;">
+                    <a href="https://x.com/visionnews" target="_blank" rel="noopener" aria-label="Twitter/X"><i
+                            class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/visionnews" target="_blank" rel="noopener"
+                        aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/visionnews" target="_blank" rel="noopener"
+                        aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@visionnews" target="_blank" rel="noopener" aria-label="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="pages/Products.html">Products</a></li>
+                    <li><a href="pages/Download.html">Download</a></li>
+                    <li><a href="pages/BuyNow.html">Buy Now</a></li>
+                    <li><a href="pages/Support.html">Support</a></li>
+                    <li><a href="pages/About.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Science</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Health</a></li>
+                    <li><a href="#">Wildlife</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vision News. All Rights Reserved.</p>
+            <p>Made with ❤️ for curious minds</p>
+        </div>
+    </footer>
+
+    <script>
+        // ── Scroll-reveal (IntersectionObserver) ──────────────
+        const revealEls = document.querySelectorAll(
+            '.card, .sidebar-widget, .pricing-card, .download-card, .team-card, .timeline-box, .faq-item, .contact-form, .stat-item'
+        );
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealEls.forEach(el => observer.observe(el));
+
+        // ── Animated stat counter ─────────────────────────────
+        function animateCount(el) {
+            const raw = el.textContent.trim();
+            const num = parseFloat(raw.replace(/[^\d.]/g, ''));
+            const suffix = raw.replace(/[\d.]/g, '');
+            if (isNaN(num)) return;
+            let start = null;
+            const duration = 1400;
+            const step = timestamp => {
+                if (!start) start = timestamp;
+                const progress = Math.min((timestamp - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const val = num % 1 === 0
+                    ? Math.round(num * eased)
+                    : (num * eased).toFixed(1);
+                el.textContent = val + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        }
+
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCount(entry.target);
+                    statObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
+
+        // ── Language selector active state ────────────────────
+        document.querySelectorAll('.lang-selector span').forEach(span => {
+            span.addEventListener('click', () => {
+                document.querySelectorAll('.lang-selector span').forEach(s => s.classList.remove('active'));
+                span.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
