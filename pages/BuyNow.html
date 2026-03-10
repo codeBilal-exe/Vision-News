@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Buy Vision News subscription. Choose Free, Pro, or Premium and get started today.">
+    <title>Vision News — Buy Now</title>
+    <link rel="icon" href="../Resources/images/WebICON.png" type="image/png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .plan-selector {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 36px;
+        }
+
+        .plan-btn {
+            padding: 10px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: .875rem;
+            border: 2px solid var(--gray-4);
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--white);
+            font-family: var(--font-body);
+        }
+
+        .plan-btn.active,
+        .plan-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .order-summary {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 80px;
+        }
+
+        .order-summary h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--gray-4);
+            padding-bottom: 12px;
+        }
+
+        .order-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: .875rem;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gray-5);
+        }
+
+        .order-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 0 0;
+            margin-top: 4px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: .78rem;
+            color: var(--gray-2);
+        }
+
+        .billing-toggle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 32px;
+            font-size: .875rem;
+        }
+
+        .toggle-switch {
+            width: 46px;
+            height: 26px;
+            background: var(--primary);
+            border-radius: 99px;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .toggle-knob {
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: var(--transition);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+        }
+
+        .saving-badge {
+            background: var(--accent);
+            color: var(--white);
+            font-size: .72rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 99px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="../Home.html" class="logo">
+            <img src="../Resources/images/Weblogo.png" alt="Vision News Logo">
+            <div class="logo-text">
+                <h1>Vision</h1>
+                <p>Your Daily Fact Partner</p>
+            </div>
+        </a>
+        <form class="search-form" role="search" onsubmit="return false;">
+            <input type="search" placeholder="Search stories, topics..." aria-label="Search">
+            <button type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="lang-selector">
+            <span class="active">EN</span><span>FR</span><span>DE</span><span>CN</span>
+        </div>
+    </header>
+
+    <!-- Nav -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="../Home.html">Home</a>
+                <a href="Products.html">Products</a>
+                <a href="Download.html">Download</a>
+                <a href="BuyNow.html" class="active">Buy Now</a>
+                <a href="Support.html">Support</a>
+                <a href="About.html">About</a>
+            </div>
+            <span class="nav-date">Tuesday, March 10, 2026</span>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h2><i class="fa fa-cart-shopping" style="color:var(--primary);margin-right:12px;"></i>Start Your Subscription
+        </h2>
+        <p>No hidden fees. Cancel anytime. 14-day money-back guarantee.</p>
+    </section>
+
+    <main>
+        <section class="section container">
+
+            <!-- Plan Selector -->
+            <div class="plan-selector">
+                <button class="plan-btn" id="btn-free" onclick="selectPlan('free')">Free</button>
+                <button class="plan-btn active" id="btn-pro" onclick="selectPlan('pro')">Vision Pro — $4.99/mo</button>
+                <button class="plan-btn" id="btn-premium" onclick="selectPlan('premium')">Vision Premium —
+                    $9.99/mo</button>
+            </div>
+
+            <!-- Billing Toggle -->
+            <div class="billing-toggle">
+                <span>Monthly</span>
+                <div class="toggle-switch" id="billing-toggle" onclick="toggleBilling()" role="switch"
+                    aria-label="Toggle annual billing">
+                    <div class="toggle-knob" id="toggle-knob"></div>
+                </div>
+                <span>Annual <span class="saving-badge" id="save-badge">Save 20%</span></span>
+            </div>
+
+            <!-- Checkout Grid -->
+            <div class="checkout-grid">
+
+                <!-- Form -->
+                <div class="contact-form">
+                    <h3
+                        style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:24px;border-bottom:1px solid var(--gray-4);padding-bottom:14px;">
+                        Your Details</h3>
+                    <form id="checkout-form" onsubmit="handleCheckout(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" name="first-name" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-email">Confirm Email</label>
+                            <input type="email" id="confirm-email" name="confirm-email" placeholder="john@example.com"
+                                required>
+                        </div>
+
+                        <h3
+                            style="font-family:var(--font-display);font-size:1.1rem;margin:28px 0 20px;border-bottom:1px solid var(--gray-4);padding-bottom:12px;">
+                            Payment Details</h3>
+
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456"
+                                maxlength="19" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry">Expiry Date</label>
+                                <input type="text" id="expiry" name="expiry" placeholder="MM / YY" maxlength="7"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name-on-card">Name on Card</label>
+                            <input type="text" id="name-on-card" name="name-on-card" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country">
+                                <option value="">Select your country</option>
+                                <option value="pk">Pakistan</option>
+                                <option value="us">United States</option>
+                                <option value="gb">United Kingdom</option>
+                                <option value="ca">Canada</option>
+                                <option value="au">Australia</option>
+                                <option value="de">Germany</option>
+                                <option value="fr">France</option>
+                                <option value="cn">China</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:24px;">
+                            <input type="checkbox" id="terms" name="terms" style="margin-top:3px;width:auto;" required>
+                            <label for="terms" style="font-size:.85rem;color:var(--gray-2);">I agree to Vision News's <a
+                                    href="#" style="color:var(--primary);">Terms of Use</a> and <a href="#"
+                                    style="color:var(--primary);">Privacy Policy</a>.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;"
+                            id="submit-btn">
+                            <i class="fa fa-lock"></i> Complete Purchase
+                        </button>
+                    </form>
+
+                    <!-- Trust Badges -->
+                    <div class="trust-badges" style="margin-top:24px;">
+                        <div class="trust-badge"><i class="fa fa-shield" style="color:var(--primary);"></i> 256-bit SSL
+                            Secure</div>
+                        <div class="trust-badge"><i class="fa fa-rotate-left" style="color:var(--primary);"></i> 14-day
+                            Refund</div>
+                        <div class="trust-badge"><i class="fa fa-credit-card" style="color:var(--primary);"></i> No
+                            Hidden Fees</div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="order-line"><span id="plan-name">Vision Pro</span><span id="plan-price">$4.99/mo</span>
+                    </div>
+                    <div class="order-line"><span>Discount</span><span id="discount-text"
+                            style="color:var(--primary);">—</span></div>
+                    <div class="order-line"><span>Tax</span><span>$0.00</span></div>
+                    <div class="order-total"><span>Total Today</span><span id="total-price"
+                            style="color:var(--primary);">$4.99</span></div>
+
+                    <div style="margin-top:24px;padding:16px;background:var(--gray-5);border-radius:var(--radius-md);">
+                        <p style="font-size:.82rem;color:var(--gray-2);line-height:1.6;">✅ Your subscription renews
+                            automatically. You can cancel anytime from your account settings.<br>✅ Includes a
+                            <strong>14-day money-back guarantee</strong>.</p>
+                    </div>
+
+                    <div style="margin-top:20px;">
+                        <p style="font-size:.8rem;font-weight:600;color:var(--dark);margin-bottom:10px;">Plan includes:
+                        </p>
+                        <ul id="plan-includes" style="display:flex;flex-direction:column;gap:8px;">
+                            <li style="display:flex;align-items:center;gap:8px;font-size:.82rem;"><i class="fa fa-check"
+                                    style="color:var(--primary);"></i> Unlimited articles</li>
+                            <li style="display:flex;align-items:center;gap:8px;font-size:.82rem;"><i class="fa fa-check"
+                                    style="color:var(--primary);"></i> Ad-free reading</li>
+                            <li style="display:flex;align-items:center;gap:8px;font-size:.82rem;"><i class="fa fa-check"
+                                    style="color:var(--primary);"></i> Daily newsletter</li>
+                            <li style="display:flex;align-items:center;gap:8px;font-size:.82rem;"><i class="fa fa-check"
+                                    style="color:var(--primary);"></i> Offline downloads (50/mo)</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div><!-- /checkout-grid -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Vision News</h3>
+                <p>Your trusted source for accurate, in-depth reporting from around the world.</p>
+                <div class="social-links" style="margin-top:20px;">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="../Home.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Download.html">Download</a></li>
+                    <li><a href="BuyNow.html">Buy Now</a></li>
+                    <li><a href="Support.html">Support</a></li>
+                    <li><a href="About.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Science</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Health</a></li>
+                    <li><a href="#">Wildlife</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vision News. All Rights Reserved.</p>
+            <p>Made with ❤️ for curious minds</p>
+        </div>
+    </footer>
+
+    <script>
+        const plans = {
+            free: { name: 'Free Plan', monthly: '$0', annual: '$0', discount: '—', includes: ['5 articles/day', 'Weekly newsletter', 'Basic access'] },
+            pro: { name: 'Vision Pro', monthly: '$4.99', annual: '$3.99', discount: '-$12/yr', includes: ['Unlimited articles', 'Ad-free reading', 'Daily newsletter', 'Offline downloads (50/mo)'] },
+            premium: { name: 'Vision Premium', monthly: '$9.99', annual: '$7.99', discount: '-$24/yr', includes: ['Unlimited articles', 'Ad-free reading', 'Daily + curated newsletter', 'Unlimited downloads', 'Priority 24/7 support'] }
+        };
+
+        let currentPlan = 'pro';
+        let isAnnual = false;
+
+        function selectPlan(plan) {
+            currentPlan = plan;
+            document.querySelectorAll('.plan-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('btn-' + plan).classList.add('active');
+            updateSummary();
+        }
+
+        function toggleBilling() {
+            isAnnual = !isAnnual;
+            document.getElementById('toggle-knob').style.left = isAnnual ? '23px' : '3px';
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const p = plans[currentPlan];
+            const price = isAnnual ? p.annual : p.monthly;
+            const period = isAnnual ? '/mo (billed annually)' : '/mo';
+            document.getElementById('plan-name').textContent = p.name;
+            document.getElementById('plan-price').textContent = price + period;
+            document.getElementById('discount-text').textContent = isAnnual ? p.discount : '—';
+            document.getElementById('total-price').textContent = price === '$0' ? '$0.00' : price;
+            const list = document.getElementById('plan-includes');
+            list.innerHTML = p.includes.map(i => `<li style="display:flex;align-items:center;gap:8px;font-size:.82rem;"><i class="fa fa-check" style="color:var(--primary);"></i> ${i}</li>`).join('');
+        }
+
+        function handleCheckout(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing...';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa fa-check"></i> Payment Successful!';
+                btn.style.background = '#27ae60';
+                btn.style.borderColor = '#27ae60';
+            }, 2000);
+        }
+
+        // Format card number
+        document.getElementById('card-number').addEventListener('input', function (e) {
+            let v = e.target.value.replace(/\D/g, '').substring(0, 16);
+            e.target.value = v.replace(/(.{4})/g, '$1 ').trim();
+        });
+
+        // Format expiry
+        document.getElementById('expiry').addEventListener('input', function (e) {
+            let v = e.target.value.replace(/\D/g, '').substring(0, 4);
+            if (v.length >= 2) v = v.substring(0, 2) + ' / ' + v.substring(2);
+            e.target.value = v;
+        });
+
+        // Check URL params for pre-selected plan
+        const urlPlan = new URLSearchParams(window.location.search).get('plan');
+        if (urlPlan && plans[urlPlan]) selectPlan(urlPlan);
+        else updateSummary();
+    </script>
+
+</body>
+
+</html>

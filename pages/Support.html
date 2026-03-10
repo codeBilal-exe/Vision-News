@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Vision News Support — Get answers to your questions. Browse FAQs or contact our team directly.">
+    <title>Vision News — Support</title>
+    <link rel="icon" href="../Resources/images/WebICON.png" type="image/png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="../Home.html" class="logo">
+            <img src="../Resources/images/Weblogo.png" alt="Vision News Logo">
+            <div class="logo-text">
+                <h1>Vision</h1>
+                <p>Your Daily Fact Partner</p>
+            </div>
+        </a>
+        <form class="search-form" role="search" onsubmit="return false;">
+            <input type="search" placeholder="Search stories, topics..." aria-label="Search">
+            <button type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="lang-selector">
+            <span class="active">EN</span><span>FR</span><span>DE</span><span>CN</span>
+        </div>
+    </header>
+
+    <!-- Nav -->
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="../Home.html">Home</a>
+                <a href="Products.html">Products</a>
+                <a href="Download.html">Download</a>
+                <a href="BuyNow.html">Buy Now</a>
+                <a href="Support.html" class="active">Support</a>
+                <a href="About.html">About</a>
+            </div>
+            <span class="nav-date">Tuesday, March 10, 2026</span>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h2><i class="fa fa-headset" style="color:var(--primary);margin-right:12px;"></i>Support Centre</h2>
+        <p>We're here to help. Browse our FAQs or send us a message — we respond within 24 hours.</p>
+    </section>
+
+    <main>
+
+        <!-- Support Channels -->
+        <section class="section container">
+            <h2 class="section-title">How Can We Help?</h2>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:60px;">
+
+                <div class="card" style="text-align:center;padding:36px 24px;">
+                    <div style="font-size:2.5rem;margin-bottom:16px;">💬</div>
+                    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">Live Chat</h3>
+                    <p style="font-size:.875rem;color:var(--gray-2);margin-bottom:20px;">Chat with our support team.
+                        Available from 9 AM – 9 PM (PKT) on weekdays.</p>
+                    <a href="#" class="btn btn-primary" id="chat-btn">Start Chat</a>
+                </div>
+
+                <div class="card" style="text-align:center;padding:36px 24px;">
+                    <div style="font-size:2.5rem;margin-bottom:16px;">📧</div>
+                    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">Email Support</h3>
+                    <p style="font-size:.875rem;color:var(--gray-2);margin-bottom:20px;">Send us a detailed message. We
+                        aim to reply within 24 hours on business days.</p>
+                    <a href="mailto:support@visionnews.com" class="btn btn-outline" id="email-btn">Email Us</a>
+                </div>
+
+                <div class="card" style="text-align:center;padding:36px 24px;">
+                    <div style="font-size:2.5rem;margin-bottom:16px;">📖</div>
+                    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">Help Docs</h3>
+                    <p style="font-size:.875rem;color:var(--gray-2);margin-bottom:20px;">Browse our self-service
+                        knowledge base with guides, tutorials, and how-tos.</p>
+                    <a href="#faq" class="btn btn-outline" id="docs-btn">Browse FAQs</a>
+                </div>
+
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div id="faq">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-list">
+
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq1-btn" onclick="toggleFaq(this)">
+                            How do I cancel my subscription?
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            You can cancel your subscription at any time from your account dashboard. Go to
+                            <strong>Account → Billing → Cancel Subscription</strong>. Your access will continue until
+                            the end of the current billing period. No refunds are issued for partial months, but our
+                            14-day money-back policy applies to your first payment.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq2-btn" onclick="toggleFaq(this)">
+                            Can I read Vision News offline?
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Yes! Pro and Premium subscribers can save articles for offline reading through our mobile
+                            and desktop apps. Pro subscribers can save up to 50 articles per month, and Premium
+                            subscribers have unlimited saves.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq3-btn" onclick="toggleFaq(this)">
+                            How do I change my email address?
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            To update your email address, visit <strong>Account → Settings → Email</strong>. You'll
+                            receive a verification link at your new email address. For security, your password is
+                            required to complete the change.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq4-btn" onclick="toggleFaq(this)">
+                            What languages is Vision News available in?
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Vision News is currently available in English (EN), French (FR), German (DE), and Chinese
+                            (CN). You can switch languages from the top right corner of any page, or from Settings →
+                            Language in the app.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq5-btn" onclick="toggleFaq(this)">
+                            Does Vision News have a free plan?
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Yes! Our Free plan gives you access to 5 articles per day, breaking news alerts, and a
+                            weekly newsletter — with no credit card required. To unlock unlimited reading, go ad-free,
+                            and access our full archive, upgrade to Vision Pro or Premium.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq6-btn" onclick="toggleFaq(this)">
+                            How do I download the Vision News app?
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            The Vision News app is available on iOS (App Store), Android (Google Play), and Windows
+                            (Microsoft Store). Visit our <a href="Download.html" style="color:var(--primary);">Download
+                                page</a> for direct links to each platform.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq7-btn" onclick="toggleFaq(this)">
+                            My payment was declined. What should I do?
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Ensure your card details are entered correctly and that the card is enabled for online
+                            transactions. If problems persist, try a different card or contact your bank. You can also
+                            use PayPal as an alternative payment method from the checkout page.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq8-btn" onclick="toggleFaq(this)">
+                            How do I report an inaccurate article?
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Vision News is committed to fact-checked, accurate journalism. If you believe an article
+                            contains errors, please use the "Report" button at the bottom of the article, or email us at
+                            <strong>corrections@visionnews.com</strong>. Our editorial team reviews every report within
+                            48 hours.
+                        </div>
+                    </div>
+
+                </div><!-- /faq-list -->
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="section section-alt">
+            <div class="container" style="max-width:820px;">
+                <h2 class="section-title">Send Us a Message</h2>
+                <div class="contact-form">
+                    <form id="contact-form" onsubmit="submitContact(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Full Name</label>
+                                <input type="text" id="contact-name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email Address</label>
+                                <input type="email" id="contact-email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <select id="contact-subject">
+                                <option value="">Select a topic</option>
+                                <option value="billing">Billing &amp; Subscription</option>
+                                <option value="account">Account &amp; Login</option>
+                                <option value="app">App Issue</option>
+                                <option value="content">Content / News</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" placeholder="Describe your issue or question in detail..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg" id="contact-submit">
+                            <i class="fa fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Vision News</h3>
+                <p>Your trusted source for accurate, in-depth reporting from around the world.</p>
+                <div class="social-links" style="margin-top:20px;">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="../Home.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Download.html">Download</a></li>
+                    <li><a href="BuyNow.html">Buy Now</a></li>
+                    <li><a href="Support.html">Support</a></li>
+                    <li><a href="About.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Science</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Health</a></li>
+                    <li><a href="#">Wildlife</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vision News. All Rights Reserved.</p>
+            <p>Made with ❤️ for curious minds</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+
+        function submitContact(e) {
+            e.preventDefault();
+            const btn = document.getElementById('contact-submit');
+            btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa fa-check"></i> Message Sent!';
+                btn.style.background = '#27ae60';
+                btn.style.borderColor = '#27ae60';
+                document.getElementById('contact-form').reset();
+            }, 1800);
+        }
+    </script>
+
+</body>
+
+</html>
