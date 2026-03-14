@@ -1539,6 +1539,12 @@ body {
     text-transform: uppercase;
 }
 
+/* ─── Mobile Menu Defaults (Hidden on Desktop) ───────────────── */
+.mobile-menu-toggle,
+.mobile-menu-close {
+    display: none !important;
+}
+
 /* ─── Responsive Overrides (Products, Download, BuyNow) ───────────────── */
 @media (max-width: 900px) {
     .section.container>div[style*="grid-template-columns"] {
@@ -1595,29 +1601,35 @@ body {
         order: -1;
     }
 
+    .mobile-menu-close {
+        display: flex !important;
+    }
+
     .nav-links {
-        display: none;
+        display: flex;
         flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
+        width: 280px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -300px;
         background: var(--dark-2);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
+        transition: left 0.3s ease;
+        z-index: 1001;
+        padding-top: 60px;
+        /* Space for close button if added or top spacing */
     }
 
     .nav-links.active {
-        display: flex;
+        left: 0;
     }
 
     .nav-links a {
-        padding: 15px 20px;
+        padding: 16px 24px;
+        font-size: 1rem;
         width: 100%;
         border-bottom: 1px solid var(--gray-1);
-    }
-
-    .nav-links a::after {
-        display: none;
     }
 
     .nav-date {

@@ -23,10 +23,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // Insert it as the first child of nav-inner
         navInner.insertBefore(toggleBtn, navInner.firstChild);
 
+        const navLinks = document.querySelector('.nav-links');
+
+        // Create close button inside the drawer
+        if (navLinks && !document.querySelector('.mobile-menu-close')) {
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'mobile-menu-close';
+            closeBtn.innerHTML = '<i class="fa fa-arrow-left"></i> Close';
+            closeBtn.setAttribute('aria-label', 'Close menu');
+            closeBtn.style.cssText = 'background:none;border:none;color:var(--gray-3);font-size:1rem;padding:20px 24px;text-align:left;cursor:pointer;border-bottom:1px solid var(--gray-1);margin-bottom:10px;display:flex;align-items:center;gap:12px;';
+            navLinks.insertBefore(closeBtn, navLinks.firstChild);
+
+            closeBtn.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+
+            // Close menu if a link is clicked
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(l => {
+                l.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+
         toggleBtn.addEventListener('click', () => {
-            const navLinks = document.querySelector('.nav-links');
             if (navLinks) {
-                navLinks.classList.toggle('active');
+                navLinks.classList.add('active');
             }
         });
     }
