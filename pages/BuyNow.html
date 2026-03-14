@@ -134,6 +134,23 @@
             border-radius: 99px;
             text-transform: uppercase;
         }
+
+        /* ─── Responsive Queries for BuyNow Page ─────────────────────────── */
+        @media (max-width: 900px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .order-summary {
+                position: static;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .plan-selector {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 
@@ -456,6 +473,20 @@
         const urlPlan = new URLSearchParams(window.location.search).get('plan');
         if (urlPlan && plans[urlPlan]) selectPlan(urlPlan);
         else updateSummary();
+
+        // ── Scroll-reveal (IntersectionObserver) ──────────────
+        const revealEls = document.querySelectorAll(
+            '.card, .sidebar-widget, .pricing-card, .download-card, .team-card, .timeline-box, .faq-item, .contact-form, .stat-item'
+        );
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealEls.forEach(el => observer.observe(el));
     </script>
 
 </body>
