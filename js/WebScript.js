@@ -97,15 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const path = window.location.pathname;
 
                 // If on Home page
-                if (path.endsWith('Home.html') || path.endsWith('/') || path.includes('index.html')) {
+                if (path.endsWith('index.html') || path.endsWith('/') || path.includes('index.html')) {
                     performSearch(query);
                     // Update URL without reloading
                     const newUrl = query ? `?search=${encodeURIComponent(query)}` : window.location.pathname;
                     window.history.pushState({ path: newUrl }, '', newUrl);
                 } else if (query) {
-                    // Redirect to Home.html
+                    // Redirect to index.html
                     const isRoot = !path.includes('/pages/');
-                    const homePath = isRoot ? 'Home.html' : '../Home.html';
+                    const homePath = isRoot ? 'index.html' : '../index.html';
                     window.location.href = `${homePath}?search=${encodeURIComponent(query)}`;
                 }
             }
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Check URL parameters on load for Home page
-    const isHome = window.location.pathname.endsWith('Home.html') || window.location.pathname.endsWith('/') || window.location.pathname.includes('index.html');
+    const isHome = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname.includes('index.html');
     if (isHome) {
         const urlParams = new URLSearchParams(window.location.search);
         const query = urlParams.get('search');

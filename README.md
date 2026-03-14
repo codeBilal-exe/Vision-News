@@ -37,7 +37,7 @@ A modern, responsive, and fully-featured static news portal website.
 
 ```text
 Vision-News/
-├── Home.html            # The primary News feed and landing page
+├── index.html            # The primary News feed and landing page
 ├── README.md            # Project documentation (You are here)
 ├── css/
 │   └── Webstyle.css     # The single global stylesheet powering the entire site
@@ -58,7 +58,7 @@ Vision-News/
 ## 🛠️ Usage & Setup
 Vision News is an entirely static, frontend-only application. There is absolutely no external build step, bundler (Webpack/Vite), or package installation required. 
 
-1. **Viewing the site**: Simply double-click `Home.html` in your file explorer. However, for the most authentic experience, it is highly recommended to serve the directory via a local development server like VS Code Live Server (`http://localhost:5500`).
+1. **Viewing the site**: Simply double-click `index.html` in your file explorer. However, for the most authentic experience, it is highly recommended to serve the directory via a local development server like VS Code Live Server (`http://localhost:5500`).
 2. **Editing Styles**: Essential CSS variables (colors, fonts, sizing, constraints) are exposed in the `:root` scope at the top of `css/Webstyle.css`. Edit these globally to rapidly reskin the site's aesthetic.
 3. **Modifying JavaScript**: All core logic (Search filtering, Paywall triggers, Animations, i18n Translations) is centralized securely within `js/WebScript.js`.
 
