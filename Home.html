@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Vision News — Your daily fact partner. Breaking news, top stories, analysis, and more.">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Vision News — Home">
+    <meta property="og:description"
+        content="Vision News — Your daily fact partner. Breaking news, top stories, analysis, and more.">
+    <meta property="og:image" content="Resources/images/Webbanner.jpg">
+    <meta property="og:url" content="https://vision-news.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Structured Data (JSON-LD) for Google News SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsMediaOrganization",
+      "name": "Vision News",
+      "url": "https://vision-news.com",
+      "logo": "https://vision-news.com/Resources/images/Weblogo.png"
+    }
+    </script>
+
     <title>Vision News — Home</title>
     <link rel="icon" href="Resources/images/WebICON.png" type="image/png">
     <link rel="stylesheet" href="css/Webstyle.css">
@@ -75,7 +95,7 @@
     <main>
         <!-- Hero Banner -->
         <section class="hero-banner">
-            <img src="Resources/images/Webbanner.jpg" alt="Today's top story banner">
+            <img src="Resources/images/Webbanner.jpg" alt="Today's top story banner" loading="lazy">
             <div class="hero-overlay">
                 <div class="hero-content">
                     <span class="tag">Top Story</span>
@@ -118,7 +138,8 @@
 
                         <!-- Card 2 -->
                         <article class="card">
-                            <img src="Resources/images/redPanda.png" alt="Red Panda in the wild" class="card-img">
+                            <img src="Resources/images/redPanda.png" alt="Red Panda in the wild" class="card-img"
+                                loading="lazy">
                             <div class="card-body">
                                 <span class="card-category">Wildlife</span>
                                 <h3 class="card-title"><a href="#">Red Pandas: The Hidden Giants of the Himalayas</a>
@@ -282,25 +303,26 @@
                     <li><a href="pages/BuyNow.html">Buy Now</a></li>
                     <li><a href="pages/Support.html">Support</a></li>
                     <li><a href="pages/About.html">About</a></li>
+                    <li><a href="pages/Categories.html">Categories</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="Resources/policies/PrivacyPolicy.html">Privacy Policy</a></li>
+                    <li><a href="Resources/policies/TermsOfUse.html">Terms of Use</a></li>
+                    <li><a href="Resources/policies/CookiePolicy.html">Cookie Policy</a></li>
                     <li><a href="#">Site Map</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Categories</h4>
                 <ul>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Science</a></li>
-                    <li><a href="#">Business</a></li>
-                    <li><a href="#">Health</a></li>
-                    <li><a href="#">Wildlife</a></li>
+                    <li><a href="Home.html?search=technology">Technology</a></li>
+                    <li><a href="Home.html?search=science">Science</a></li>
+                    <li><a href="Home.html?search=business">Business</a></li>
+                    <li><a href="Home.html?search=health">Health</a></li>
+                    <li><a href="Home.html?search=wildlife">Wildlife</a></li>
                 </ul>
             </div>
         </div>
@@ -310,60 +332,22 @@
         </div>
     </footer>
 
-    <script>
-        // ── Scroll-reveal (IntersectionObserver) ──────────────
-        const revealEls = document.querySelectorAll(
-            '.card, .sidebar-widget, .pricing-card, .download-card, .team-card, .timeline-box, .faq-item, .contact-form, .stat-item'
-        );
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        revealEls.forEach(el => observer.observe(el));
-
-        // ── Animated stat counter ─────────────────────────────
-        function animateCount(el) {
-            const raw = el.textContent.trim();
-            const num = parseFloat(raw.replace(/[^\d.]/g, ''));
-            const suffix = raw.replace(/[\d.]/g, '');
-            if (isNaN(num)) return;
-            let start = null;
-            const duration = 1400;
-            const step = timestamp => {
-                if (!start) start = timestamp;
-                const progress = Math.min((timestamp - start) / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                const val = num % 1 === 0
-                    ? Math.round(num * eased)
-                    : (num * eased).toFixed(1);
-                el.textContent = val + suffix;
-                if (progress < 1) requestAnimationFrame(step);
-            };
-            requestAnimationFrame(step);
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,fr,de,zh-CN',
+                autoDisplay: false
+            }, 'google_translate_element');
         }
-
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCount(entry.target);
-                    statObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
-
-        // ── Language selector active state ────────────────────
-        document.querySelectorAll('.lang-selector span').forEach(span => {
-            span.addEventListener('click', () => {
-                document.querySelectorAll('.lang-selector span').forEach(s => s.classList.remove('active'));
-                span.classList.add('active');
-            });
-        });
     </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- External Script -->
+    <script src="js/WebScript.js"></script>
 
 </body>
 

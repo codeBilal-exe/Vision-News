@@ -6,152 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Buy Vision News subscription. Choose Free, Pro, or Premium and get started today.">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Vision News — Buy Now">
+    <meta property="og:description"
+        content="Buy Vision News subscription. Choose Free, Pro, or Premium and get started today.">
+    <meta property="og:url" content="https://vision-news.com/pages/BuyNow.html">
+    <meta property="og:type" content="website">
+
     <title>Vision News — Buy Now</title>
     <link rel="icon" href="../Resources/images/WebICON.png" type="image/png">
     <link rel="stylesheet" href="../css/Webstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        .plan-selector {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 36px;
-        }
-
-        .plan-btn {
-            padding: 10px 24px;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            font-size: .875rem;
-            border: 2px solid var(--gray-4);
-            cursor: pointer;
-            transition: var(--transition);
-            background: var(--white);
-            font-family: var(--font-body);
-        }
-
-        .plan-btn.active,
-        .plan-btn:hover {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-
-        .checkout-grid {
-            display: grid;
-            grid-template-columns: 1fr 380px;
-            gap: 48px;
-            align-items: start;
-        }
-
-        .order-summary {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 28px;
-            box-shadow: var(--shadow-sm);
-            position: sticky;
-            top: 80px;
-        }
-
-        .order-summary h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--gray-4);
-            padding-bottom: 12px;
-        }
-
-        .order-line {
-            display: flex;
-            justify-content: space-between;
-            font-size: .875rem;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--gray-5);
-        }
-
-        .order-total {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 14px 0 0;
-            margin-top: 4px;
-        }
-
-        .trust-badges {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            margin-top: 16px;
-            flex-wrap: wrap;
-        }
-
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: .78rem;
-            color: var(--gray-2);
-        }
-
-        .billing-toggle {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 32px;
-            font-size: .875rem;
-        }
-
-        .toggle-switch {
-            width: 46px;
-            height: 26px;
-            background: var(--primary);
-            border-radius: 99px;
-            position: relative;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .toggle-knob {
-            width: 20px;
-            height: 20px;
-            background: var(--white);
-            border-radius: 50%;
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            transition: var(--transition);
-            box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
-        }
-
-        .saving-badge {
-            background: var(--accent);
-            color: var(--white);
-            font-size: .72rem;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 99px;
-            text-transform: uppercase;
-        }
-
-        /* ─── Responsive Queries for BuyNow Page ─────────────────────────── */
-        @media (max-width: 900px) {
-            .checkout-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .order-summary {
-                position: static;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .plan-selector {
-                flex-direction: column;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -381,25 +247,26 @@
                     <li><a href="BuyNow.html">Buy Now</a></li>
                     <li><a href="Support.html">Support</a></li>
                     <li><a href="About.html">About</a></li>
+                    <li><a href="Categories.html">Categories</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="../Resources/policies/PrivacyPolicy.html">Privacy Policy</a></li>
+                    <li><a href="../Resources/policies/TermsOfUse.html">Terms of Use</a></li>
+                    <li><a href="../Resources/policies/CookiePolicy.html">Cookie Policy</a></li>
                     <li><a href="#">Site Map</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Categories</h4>
                 <ul>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Science</a></li>
-                    <li><a href="#">Business</a></li>
-                    <li><a href="#">Health</a></li>
-                    <li><a href="#">Wildlife</a></li>
+                    <li><a href="../Home.html?search=technology">Technology</a></li>
+                    <li><a href="../Home.html?search=science">Science</a></li>
+                    <li><a href="../Home.html?search=business">Business</a></li>
+                    <li><a href="../Home.html?search=health">Health</a></li>
+                    <li><a href="../Home.html?search=wildlife">Wildlife</a></li>
                 </ul>
             </div>
         </div>
@@ -473,21 +340,24 @@
         const urlPlan = new URLSearchParams(window.location.search).get('plan');
         if (urlPlan && plans[urlPlan]) selectPlan(urlPlan);
         else updateSummary();
-
-        // ── Scroll-reveal (IntersectionObserver) ──────────────
-        const revealEls = document.querySelectorAll(
-            '.card, .sidebar-widget, .pricing-card, .download-card, .team-card, .timeline-box, .faq-item, .contact-form, .stat-item'
-        );
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        revealEls.forEach(el => observer.observe(el));
     </script>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,fr,de,zh-CN',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- External Script -->
+    <script src="../js/WebScript.js"></script>
 
 </body>
 

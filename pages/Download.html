@@ -6,24 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Download the Vision News app for iOS, Android, and Windows. Stay informed on the go.">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Vision News — Download">
+    <meta property="og:description"
+        content="Download the Vision News app for iOS, Android, and Windows. Stay informed on the go.">
+    <meta property="og:url" content="https://vision-news.com/pages/Download.html">
+    <meta property="og:type" content="website">
+
     <title>Vision News — Download</title>
     <link rel="icon" href="../Resources/images/WebICON.png" type="image/png">
     <link rel="stylesheet" href="../css/Webstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        /* Responsive Overrides */
-        @media (max-width: 900px) {
-            .section.section-alt .container>div[style*="grid-template-columns"] {
-                grid-template-columns: 1fr 1fr !important;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .section.section-alt .container>div[style*="grid-template-columns"] {
-                grid-template-columns: 1fr !important;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -230,25 +224,26 @@
                     <li><a href="BuyNow.html">Buy Now</a></li>
                     <li><a href="Support.html">Support</a></li>
                     <li><a href="About.html">About</a></li>
+                    <li><a href="Categories.html">Categories</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="../Resources/policies/PrivacyPolicy.html">Privacy Policy</a></li>
+                    <li><a href="../Resources/policies/TermsOfUse.html">Terms of Use</a></li>
+                    <li><a href="../Resources/policies/CookiePolicy.html">Cookie Policy</a></li>
                     <li><a href="#">Site Map</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Categories</h4>
                 <ul>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Science</a></li>
-                    <li><a href="#">Business</a></li>
-                    <li><a href="#">Health</a></li>
-                    <li><a href="#">Wildlife</a></li>
+                    <li><a href="../Home.html?search=technology">Technology</a></li>
+                    <li><a href="../Home.html?search=science">Science</a></li>
+                    <li><a href="../Home.html?search=business">Business</a></li>
+                    <li><a href="../Home.html?search=health">Health</a></li>
+                    <li><a href="../Home.html?search=wildlife">Wildlife</a></li>
                 </ul>
             </div>
         </div>
@@ -259,29 +254,22 @@
     </footer>
 
 
-    <script>
-        // ── Scroll-reveal (IntersectionObserver) ──────────────
-        const revealEls = document.querySelectorAll(
-            '.card, .sidebar-widget, .pricing-card, .download-card, .team-card, .timeline-box, .faq-item, .contact-form, .stat-item'
-        );
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        revealEls.forEach(el => observer.observe(el));
-
-        // ── Language selector active state ────────────────────
-        document.querySelectorAll('.lang-selector span').forEach(span => {
-            span.addEventListener('click', () => {
-                document.querySelectorAll('.lang-selector span').forEach(s => s.classList.remove('active'));
-                span.classList.add('active');
-            });
-        });
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,fr,de,zh-CN',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
     </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- External Script -->
+    <script src="../js/WebScript.js"></script>
 </body>
 
 </html>
