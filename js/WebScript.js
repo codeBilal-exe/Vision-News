@@ -12,6 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 800);
     }
 
+    // ── Mobile Menu Toggle ────────────────────────────────
+    const navInner = document.querySelector('.nav-inner');
+    if (navInner && !document.querySelector('.mobile-menu-toggle')) {
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'mobile-menu-toggle';
+        toggleBtn.setAttribute('aria-label', 'Toggle mobile menu');
+        toggleBtn.innerHTML = '<i class="fa fa-bars"></i>';
+
+        // Insert it as the first child of nav-inner
+        navInner.insertBefore(toggleBtn, navInner.firstChild);
+
+        toggleBtn.addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks) {
+                navLinks.classList.toggle('active');
+            }
+        });
+    }
+
     // ── Scroll-reveal (IntersectionObserver) ──────────────
     const revealEls = document.querySelectorAll(
         '.card, .sidebar-widget, .pricing-card, .download-card, .team-card, .timeline-box, .faq-item, .contact-form, .stat-item'
