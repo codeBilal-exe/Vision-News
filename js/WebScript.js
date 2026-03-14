@@ -2,6 +2,16 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ── Dynamic Navigation Date ───────────────────────────
+    const navDateEl = document.querySelector('.nav-date');
+    if (navDateEl) {
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        // Simulated loading delay to display the loading indicator
+        setTimeout(() => {
+            navDateEl.textContent = new Date().toLocaleDateString('en-US', options);
+        }, 800);
+    }
+
     // ── Scroll-reveal (IntersectionObserver) ──────────────
     const revealEls = document.querySelectorAll(
         '.card, .sidebar-widget, .pricing-card, .download-card, .team-card, .timeline-box, .faq-item, .contact-form, .stat-item'
